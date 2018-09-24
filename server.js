@@ -29,6 +29,6 @@ MongoClient.connect(db.url, (err, database) => {
     console.log(err)
   }else{
     // setting up all the routes defined in the *routes* folder - make sure you add the database name (here = "test_database") and not a collection name
-    require('./app/routes')(app, database.db("test_database"));
+    require('./app/routes')(app, database.db(db.databasename));
   }
 })
